@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 1.在c3中对不同的浏览器做兼容-->
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+            border: 1px solid red;
+            position: relative;
+        }
+        div:hover{
+            background: red;
+            /*height: 100%;*/
+        }
+        /*2.伪元素选择器*/
+        li[type~="d"]{
+            background-color: red;
+        }
+        li[type^="c"]{
+            background-color: green;
+        }
+        li[type$="e"]{
+            background-color: deeppink;
+        }
+        li[type*="ff"]{
+            background-color: black;}
+        /*尖刀尖刀*/
+        li[class^='icon-']{
+            background-image:url('./sprites.png');
+        }
+        .icon-a{
+            width:36px;
+            height: 43px;
+            background-position: -132px -61px;
+        }
+        .icon-b{
+            width: 52px;
+            height: 43px;
+            background-position: -183px -61px;
+            background-color: red;
+
+        }
+        .icon-c{
+            width: 52px;
+            height: 43px;
+            background-position: -244px -61px;
+            background-color: red;
+        }
+        /*3.伪元素选择器*/
+        ul>li:first-child{
+            background-color:green;
+        }
+        ul>li:last-child{
+            background-color: black;
+        }
+        ul>li:nth-child(4){
+            background-color: #632dc8;
+        }
+        ul>li:last-of-type{
+            background-color: deeppink ;
+        }
+
+        /*4.伪类选择器*/
+        div::before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0%;
+            background: chartreuse;
+            opacity: .5;
+            -webkit-transition: all 1s;
+            -moz-transition: all 1s;
+            -ms-transition: all 1s;
+            -o-transition: all 1s;
+            transition: all 1s;
+        }
+        div:hover::before{
+            height:100%;
+        }
+        /*5.文字阴影*/
+        h3{
+            font-size: 20px;
+            font-weight: 900;
+            text-shadow: 10px 10px 5px yellow;
+        }
+        /*6.盒子阴影*/
+        .ane{
+            width: 100px;
+            height: 100px;
+            background: green;
+            -webkit-box-shadow: 10px 10px 5px yellow;
+            -moz-box-shadow:  10px 10px 5px yellow;
+            box-shadow:  10px 10px 5px yellow;
+        }
+        /*7.盒子模型*/
+        .ane{
+            /*box-sizing: border-box;*/
+            /*box-sizing: border-box;*/
+            box-sizing: content-box;
+        }
+        /*8.背景图片的扩充*/
+        .bbb{
+            width: 300px;
+            height: 300px;
+            background: url('./bg1.png'), url('./bg2.png'), url('./bg3.png'), url('./bg4.png');
+            background-position:top left,top right,bottom right,bottom left;
+            background-size:150px 150px,150px 150px,150px 150px,150px 150px;
+            background-repeat: no-repeat;
+            background-origin: content-box;
+            background-clip: content-box;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <ul>
+        <li type="icon-a d" class="icon-a"></li>
+        <li type="icon-b" class="icon-b"></li>
+        <li type="icon-c" class="icon-c"></li>
+        <li type="icon-d"></li>
+        <li type="icon-e"></li>
+        <li type="icon-f"></li>
+        <li type="icon-ff"></li>
+        <li type="cicon-dd"></li>
+        <div ></div>
+    </ul>
+    <h3>22222</h3>
+<div class="ane"></div>
+<div class="bbb"></div>
+</body>
+</html>
