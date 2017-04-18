@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            transform:translateY(190px);
+        }
+        body:hover div{
+            transform:translateY(-300px) translateX(800px) rotate(70deg);
+            transition:all .5s;
+        }
+        body{
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            background: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
